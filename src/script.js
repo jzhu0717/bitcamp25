@@ -1,6 +1,41 @@
 // Initialize stats and questions
 let currentQuestion = 0;
 const stats = {};
+
+// Add this mapping array at the top of your script
+const statLabels = [
+    "age",                  // stat1
+    "height",               // stat2
+    "weight",               // stat3
+    "mbti",                 // stat4
+    "% dog",                // stat5
+    "spice tolerance",      // stat6
+    "lactose tolerance",    // stat7
+    "% npc",                // stat8
+    "% rizz",               // stat9
+    "% aura",               // stat10
+    "bank account balance", // stat11
+    "% bullied probability",// stat12
+    "% no hand wash",       // stat13
+    "% fridge capacity",    // stat14
+    "# friends",            // stat15
+    "screen time",          // stat16
+    "eye prescription",     // stat17
+    "% indian",             // stat18
+    "% melanated",          // stat19
+    "% hairline",           // stat20
+    "% tuffness",           // stat21
+    "% durability",         // stat22
+    "% bone density",       // stat23
+    "how easy to draw",     // stat24
+    "gpa",                 // stat25
+    "smash/pass",          // stat26
+    "size",                // stat27
+    "speed",               // stat28
+    "ping",                // stat29
+    "unused"              // stat30 (you didn't specify)
+];
+
 const questions = [
     // Sample question - you'll need to add all 26
     {
@@ -589,23 +624,100 @@ function showResults() {
     
     const statsContainer = document.getElementById('stats-container');
     statsContainer.innerHTML = '';
-    
-    Object.entries(stats).forEach(([statName, value]) => {
+
+    // Generate random values for specific stats
+    const randomMBTI = () => {
+        // const types = ['E','I'], ['N','S'], ['F','T'], ['J','P'];
+        // return types.map(t => t[Math.floor(Math.random()*2)]).join('');
+        return "MMMM"
+    };
+
+    const randomSize = () => {
+        const sizes = ["Lil' Big Gulp", "Big Gulp", "Super Big Gulp", "Double Gulp"];
+        return sizes[Math.floor(Math.random() * sizes.length)];
+    };
+
+    Object.entries(stats).forEach(([statKey, value]) => {
+        const statNumber = parseInt(statKey.replace('stat',''));
+        const modValue = value % 101;  // Apply modulus 101
+        const label = statLabels[statNumber - 1];
+        
+        let displayValue;
+        
+        // Handle special cases
+        switch(label) {
+            case 'age':
+                displayValue = Math.round(10 + (modValue/100 * 50)); // 10-60
+                break;
+            case 'height': {
+                const totalInches = 36 + (modValue/100 * 48); // 3ft (36") to 7ft (84")
+                const feet = Math.floor(totalInches / 12);
+                const inches = Math.round(totalInches % 12);
+                displayValue = `${feet}'${inches}"`;
+                break;
+            }
+            case 'weight':
+                displayValue = Math.round(100 + (modValue/100 * 200)); // 100-300 lbs
+                break;
+            case 'mbti':
+                displayValue = randomMBTI();
+                break;
+            case '% aura':
+                displayValue = ((modValue - 50) * 2000).toLocaleString(); // -100,000 to 100,000
+                break;
+            case 'bank account balance': {
+                const balance = (modValue - 50) * 400; // -20k to +20k
+                displayValue = `$${balance.toLocaleString()}`;
+                break;
+            }
+            case '# friends':
+                displayValue = Math.round(-1 + (modValue/100 * 101)); // -1 to 100+
+                break;
+            case 'screen time':
+                displayValue = (modValue/100 * 24).toFixed(1) + ' hrs'; // 0-24 hrs
+                break;
+            case 'eye prescription':
+                displayValue = (-12 * (modValue/100)).toFixed(2); // 0.00 to -12.00
+                break;
+            case '% bone density':
+                displayValue = Math.round(modValue/100 * 300) + ' g/cm³'; // 0-300
+                break;
+            case 'gpa':
+                displayValue = (4 * (modValue/100)).toFixed(2); // 0.00-4.00
+                break;
+            case 'smash/pass':
+                displayValue = Math.random() > 0.5 ? 'Smash' : 'Pass';
+                break;
+            case 'size':
+                displayValue = randomSize();
+                break;
+            case 'speed':
+                displayValue = Math.round(-20 + (modValue/100 * 220)) + ' mph'; // -20-200
+                break;
+            case 'ping':
+                displayValue = Math.round(modValue/100 * 20000) + ' ms'; // 0-20000
+                break;
+            default:
+                // For percentage-based stats
+                displayValue = modValue + '%';
+        }
+
         const statDiv = document.createElement('div');
         statDiv.className = 'stat-bar';
         
         statDiv.innerHTML = `
             <div class="stat-label">
-                ${statName}: ${value}%
+                ${label}: ${displayValue}
             </div>
             <div class="bar-container">
-                <div class="bar-fill" style="width: ${value}%"></div>
+                <div class="bar-fill" style="width: ${modValue}%"></div>
             </div>
         `;
         
         statsContainer.appendChild(statDiv);
     });
 }
+
 
 // Start the quiz
 initializeStats();
