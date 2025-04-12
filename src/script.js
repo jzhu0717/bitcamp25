@@ -8,15 +8,15 @@ const questions = [
         answers: [
             {
                 text: "bacon",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat5: 3, stat1: -1, stat13: 10 }
             },
             {
                 text: "egg",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: 10, stat11: -200, stat15: 3 }
             },
             {
                 text: "cheese",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: -1, stat25: 1, stat16: 3 }
             }
         ]
     },
@@ -25,11 +25,11 @@ const questions = [
         answers: [
             {
                 text: "dennys",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat5: 12, stat19: 10, stat13: 12 }
             },
             {
                 text: "waffle house",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: -5, stat19: 25, stat18: 5 }
             }
         ]
     },
@@ -38,19 +38,19 @@ const questions = [
         answers: [
             {
                 text: "1 (cap)",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat8: 15, stat22: 10, stat16: -3 }
             },
             {
                 text: "2",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat22: 3, stat16: 6, stat27: 1 }
             },
             {
                 text: "3+",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat8: -15, stat22: -10, stat16: 3 }
             },
             {
                 text: "rawdog (no alarm)",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat9: 10, stat22: 25, stat27: 1 }
             }
         ]
     },
@@ -59,31 +59,31 @@ const questions = [
         answers: [
             {
                 text: "haskell",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat14: -30, stat7: 3, stat1: 40 }
             },
             {
                 text: "matlab",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: -18, stat7: 50, stat1: 18 }
             },
             {
                 text: "cobol",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: -70, stat7: 3, stat1: -6 }
             },
             {
                 text: "php",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: 50, stat7: 5, stat1: 51 }
             },
             {
                 text: "R",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: 20, stat7: 9, stat1: 54 }
             },
             {
                 text: "x86 asm",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: 20, stat7: 9, stat1: 54, stat10: -1000 }
             },
             {
                 text: "lisp",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat14: 15, stat7: -3, stat1: 21 }
             }
         ]
     },
@@ -92,7 +92,7 @@ const questions = [
         answers: [
             {
                 text: "kraft singles",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat5: 42, stat20: 15, stat24: 9, stat12: 15 }
             },
             {
                 text: "cream cheese",
@@ -117,19 +117,19 @@ const questions = [
             },
             {
                 text: "right arm",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: 24, stat20: 6, stat24: 3, stat12: 6 }
             },
             {
                 text: "left leg",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat5: 16, stat20: 18, stat24: -3, stat12: 10 }
             },
             {
                 text: "right leg",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: 42, stat20: 15, stat24: 9, stat12: 15 }
             },
             {
                 text: "nose",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat5: 42, stat20: 15, stat24: 9, stat12: -40 }
             } 
         ]
     },
@@ -138,27 +138,27 @@ const questions = [
         answers: [
             {
                 text: "Ellicott community",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat11: -100, stat29: 1003, stat8: 12, stat25: -1 }
             },
             {
                 text: "Cambridge community",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat11: 3000, stat29: 24, stat8: 30, stat25: -1 }
             },
             {
                 text: "Denton community",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat11: 500, stat29: 24, stat8: 40, stat25: 5 }
             },
             {
                 text: "JW/PC",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat11: 10000, stat29: 1, stat8: 6, stat25: 9 }
             },
             {
                 text: "P-Freddy",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat11: 15000, stat29: -10 , stat8: 50, stat25: 12 }
             },
             {
                 text: "other",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat11: -3, stat29: -3, stat8: -3, stat25: 3 }
             }              
         ]
     },
@@ -167,46 +167,32 @@ const questions = [
         answers: [
             {
                 text: "1",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat28: 7 }
             },
             {
                 text: "2",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 14 }
             },
             {
                 text: "3",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 21 }
             },
             {
                 text: "4",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 28 }
             },
             {
                 text: "5",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 35 }
             },
             {
                 text: "6",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 42 }
             },
             {
                 text: "7",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat28: 29 }
             }
-        ]
-    },
-    {
-        question: "Question 1?",
-        answers: [
-            {
-                text: "Answer 1",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
-            },
-            {
-                text: "Answer 2",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
-            }
-            // Add more answers as needed
         ]
     },
     {
@@ -214,19 +200,19 @@ const questions = [
         answers: [
             {
                 text: "taco bell",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat13: 50, stat14: -19, stat17: 2 }
             },
             {
                 text: "mcdonalds",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat13: 50, stat14: -39, stat17: -1 }
             },
             {
                 text: "subway",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat13: -50, stat14: 29, stat17: 3 }
             },
             {
                 text: "popeyes",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat13: -50, stat14: -19, stat17: 2 }
             }
         ]
     },
@@ -235,23 +221,23 @@ const questions = [
         answers: [
             {
                 text: "iphone",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat6: -15, stat21: 25, stat2: 32 }
             },
             {
                 text: "samsung",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat6: 15, stat21: 15, stat2: 64 }
             },
             {
                 text: "motorola",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat6: 3, stat21: -15, stat2: -10 }
             },
             {
                 text: "huawei",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat6: 3, stat21: -25, stat2: 7 }
             },
             {
                 text: "other",
-                stats: { stat1: -2, stat2: 4, stat3: 1 }
+                stats: { stat6: -25, stat21: -25, stat2: 7 }
             }
         ]
     },
@@ -278,11 +264,11 @@ const questions = [
         answers: [
             {
                 text: "have unlimited bacon but no games",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat26: 2, stat16: 19, stat10: 8 }
             },
             {
                 text: "have unlimited games but no games",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat26: 1 , stat16: 9, stat10: 18 }
             }
         ]
     },
@@ -291,11 +277,11 @@ const questions = [
         answers: [
             {
                 text: "never be able to eat again",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat20: -15, stat24: 45, stat9: 18 }
             },
             {
                 text: "never be able to poop again",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat20: -40, stat24: -20, stat9: 6 }
             }
         ]
     },
@@ -304,15 +290,15 @@ const questions = [
         answers: [
             {
                 text: "wait out the clock",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat9: 21, stat10: -5, stat15: -10 }
             },
             {
                 text: "submit immediately",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat9: 60, stat10: 25, stat15: 4 }
             },
             {
                 text: "change some of the answers a couple times",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat9: 61, stat10: 10, stat15: 1 }
             }
         ]
     },
@@ -321,23 +307,23 @@ const questions = [
         answers: [
             {
                 text: "pencil tap",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: 28, stat19: -10, stat25: 12 }
             },
             {
                 text: "foot tap",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: 28, stat19: -10, stat25: 12 }
             },
             {
                 text: "cough",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: 18, stat19: -5, stat25: 19 }
             },
             {
                 text: "audibly talk to them",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: -29, stat19: 25, stat25: -25 }
             },
             {
                 text: "pull out you phone and call them",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: -11, stat: 28, stat25: -25 }
             }
         ]
     },
@@ -346,19 +332,19 @@ const questions = [
         answers: [
             {
                 text: "laugh it off 'that was intentional'",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: -30, stat23: 10, stat21: -5 }
             },
             {
                 text: "start crying",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: -50, stat23: -20, stat21: -25 }
             },
             {
                 text: "I never fall",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: -5, stat23: 20, stat21: 10 }
             },
             {
                 text: "too broke to take a veo",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: 20, stat23: 41, stat21: 31 }
             }
         ]
     },
@@ -367,15 +353,15 @@ const questions = [
         answers: [
             {
                 text: "leave",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat15: -14, stat7: 42, stat16: -5 }
             },
             {
                 text: "own up to it",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat15: 3, stat7: -11, stat16: -5 }
             },
             {
                 text: "Plastic. Bag.",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat15: 18, stat7: 43, stat16: 16 }
             }
         ]
     },
@@ -384,19 +370,19 @@ const questions = [
         answers: [
             {
                 text: "new phone who dis",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat24: 15, stat22: 3, stat13: 5 }
             },
             {
                 text: "no follow up text",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat24: -10, stat22: 19, stat13: 30 }
             },
             {
                 text: "double down",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat24: -15, stat22: 18, stat13: 31 }
             },
             {
                 text: "send laughing/crying/skull emoji",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat24: 16, stat22: 21, stat13: 41 }
             }
         ]
     },
@@ -405,19 +391,19 @@ const questions = [
         answers: [
             {
                 text: "Shove yourself in (and don’t fart)",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: -20, stat20: 8, stat26: 1 }
             },
             {
                 text: "Shove yourself in (and fart)",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: 35, stat20: 8, stat26: 1 }
             },
             {
                 text: "take the stairs",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: 3, stat20: 16, stat26: 2 }
             },
             {
                 text: "wait for the next elevator",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: -3, stat20: -12, stat26: 3 }
             }
         ]
     },
@@ -426,23 +412,23 @@ const questions = [
         answers: [
             {
                 text: "whole",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat12: -10, stat16: 14, stat18: 15 }
             },
             {
                 text: "2%",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat12: -3, stat16: 12, stat18: 16 }
             },
             {
                 text: "skim/lowfat",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat12: 30, stat16: 10, stat18: 8 }
             },
             {
                 text: "chocolate",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat12: 3, stat16: 8, stat18: -20 }
             },
             {
                 text: "strawberry",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat12: -15, stat16: 19, stat18: -10 }
             }
         ]
     },
@@ -451,19 +437,19 @@ const questions = [
         answers: [
             {
                 text: "Point the way he needs to go",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat29: 60, stat23: 5, stat7: 17 }
             },
             {
                 text: "walk the opposite direction",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat29: 10, stat23: 18, stat7: 18 }
             },
             {
                 text: "lead him to where he needs to go",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat29: -10, stat23: 1, stat7: -7 }
             },
             {
                 text: "子曰：道千乘之国：敬事而信，节用而爱人，使民以时。",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat29: -20, stat23: 50, stat7: -15 }
             }
         ]
     },
@@ -472,19 +458,19 @@ const questions = [
         answers: [
             {
                 text: "0 (ur lying)",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat21: 11, stat1: 5, stat27: 1 }
             },
             {
                 text: "1",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat21: 6, stat1: 6, stat27: 10 }
             },
             {
                 text: "2",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat21: 4, stat1: 5, stat27: 20 }
             },
             {
                 text: "3+",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat21: 12, stat1: -11, stat27: 40 }
             }
         ]
     },
@@ -493,19 +479,19 @@ const questions = [
         answers: [
             {
                 text: "Go in and throw ur opp off the bus",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat23: 20, stat19: 23, stat16: 3 }
             },
             {
                 text: "Go in (and fart)",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: 12, stat10: -5, stat9: -33 }
             },
             {
                 text: "Go in and stay silent the entire ride",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: 28, stat8: 82, stat2: 1 }
             },
             {
                 text: "Wait for the next bus",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat11: 11, stat14: -29, stat17: 29 }
             }
         ]
     },
@@ -514,19 +500,19 @@ const questions = [
         answers: [
             {
                 text: "I had to attend my fish’s funeral",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat20: 33, stat18: -3, stat22: 18 }
             },
             {
                 text: "Be honest",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat16: 42, stat23: 2, stat2: -3 }
             },
             {
                 text: "Run.",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat25: 97, stat25: 79, stat17: -22 }
             },
             {
                 text: "Nothing. It's cooked. Go back to bed.",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat11: 33, stat5: 6, stat7: -11 }
             }
         ]
     },
@@ -535,19 +521,19 @@ const questions = [
         answers: [
             {
                 text: "Be the first one to ask what happened to the ground beef",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat10: 23, stat6: 19, stat8: 67 }
             },
             {
                 text: "Blame it on the fattest guy in the friend group",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat9: 14, stat15: -2, stat19: 83 }
             },
             {
                 text: "Gaslight everyone that they forgot to bring it",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat18: 66, stat20: -27, stat17: -13 }
             },
             {
                 text: "Slowly drop hints throughout the trip that you ate all of it",
-                stats: { stat1: 5, stat2: -3, stat3: 2 }
+                stats: { stat29: 44, stat28: 18, stat25: -13 }
             }
         ]
     }
