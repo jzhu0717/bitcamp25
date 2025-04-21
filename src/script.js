@@ -32,8 +32,7 @@ const statLabels = [
     "smash/pass",          // stat26
     "size",                // stat27
     "speed",               // stat28
-    "ping",                // stat29
-    "unused"              // stat30 (you didn't specify)
+    "ping"                // stat29
 ];
 
 const questions = [
@@ -489,7 +488,7 @@ const questions = [
         ]
     },
     {
-        question: "你从UMD dining hall 偷过几个 plates?",
+        question: "你从UMD dining hall偷过几个plates?",
         answers: [
             {
                 text: "0 (ur lying)",
@@ -585,18 +584,84 @@ function initializeStats() {
 function showQuestion() {
     const question = questions[currentQuestion];
     document.getElementById('question-text').textContent = question.question;
-    
     const optionsContainer = document.getElementById('options-container');
+    const nextButton = document.getElementById('next-button');
     optionsContainer.innerHTML = '';
-    
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.className = 'option-button';
-        button.textContent = answer.text;
-        button.onclick = () => selectAnswer(answer.stats);
-        optionsContainer.appendChild(button);
-    });
-    
+    nextButton.style.display = 'none';
+
+    // Handle "Best floor of Mckeldin" (Question index 7)
+    if (currentQuestion === 7) {
+        const container = document.createElement('div');
+        const slider = document.createElement('input');
+        const valueDisplay = document.createElement('span');
+        valueDisplay.style.marginLeft = '10px';
+        
+        slider.type = 'range';
+        slider.min = 1;
+        slider.max = 7;
+        slider.value = 1;
+        slider.className = 'option-button';
+        
+        slider.addEventListener('input', () => {
+            valueDisplay.textContent = slider.value;
+            nextButton.style.display = 'block';
+        });
+        
+        container.appendChild(slider);
+        container.appendChild(valueDisplay);
+        optionsContainer.appendChild(container);
+
+        nextButton.onclick = () => {
+            const floor = parseInt(slider.value);
+            const stat28Value = question.answers[floor - 1].stats.stat28;
+            selectAnswer({ stat28: stat28Value });
+        };
+    }
+    // Handle "favorite color:" (Question index 10)
+    else if (currentQuestion === 10) {
+        const colorPicker = document.createElement('input');
+        colorPicker.type = 'color';
+        colorPicker.className = 'option-button';
+        optionsContainer.appendChild(colorPicker);
+
+        colorPicker.addEventListener('input', () => {
+            nextButton.style.display = 'block';
+        });
+
+        nextButton.onclick = () => {
+            // Use the stats from the first answer (as per original setup)
+            selectAnswer(question.answers[0].stats);
+        };
+    }
+    // Handle "birthdate" (Question index 11)
+    else if (currentQuestion === 11) {
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.min = 0;
+        slider.max = 100;
+        slider.value = 0;
+        slider.className = 'option-button';
+        optionsContainer.appendChild(slider);
+
+        slider.addEventListener('input', () => {
+            nextButton.style.display = 'block';
+        });
+
+        nextButton.onclick = () => {
+            selectAnswer({ stat1: parseInt(slider.value) });
+        };
+    }
+    // Default case: render buttons for other questions
+    else {
+        question.answers.forEach(answer => {
+            const button = document.createElement('button');
+            button.className = 'option-button';
+            button.textContent = answer.text;
+            button.onclick = () => selectAnswer(answer.stats);
+            optionsContainer.appendChild(button);
+        });
+    }
+
     document.getElementById('progress').textContent = 
         `Question ${currentQuestion + 1} of ${questions.length}`;
 }
@@ -627,14 +692,15 @@ function showResults() {
 
     // Generate random values for specific stats
     const randomMBTI = () => {
-        // const types = ['E','I'], ['N','S'], ['F','T'], ['J','P'];
-        // return types.map(t => t[Math.floor(Math.random()*2)]).join('');
-        return "MMMM"
+        const types = [['E','I'], ['N','S'], ['F','T'], ['J','P']];
+        return types.map(t => t[Math.floor(Math.random() * 2)]).join('');
     };
 
-    const randomSize = () => {
-        const sizes = ["Lil' Big Gulp", "Big Gulp", "Super Big Gulp", "Double Gulp"];
-        return sizes[Math.floor(Math.random() * sizes.length)];
+    const getSize = (modValue) => {
+        if (modValue <= 25) return "Lil' Big Gulp";
+        else if (modValue <= 50) return "Big Gulp";
+        else if (modValue <= 75) return "Super Big Gulp";
+        else return "Double Gulp";
     };
 
     Object.entries(stats).forEach(([statKey, value]) => {
@@ -642,6 +708,9 @@ function showResults() {
         const modValue = value % 101;  // Apply modulus 101
         const label = statLabels[statNumber - 1];
         
+        // Skip creating bars for these stats
+        if (label === 'mbti' || label === 'size') return;
+
         let displayValue;
         
         // Handle special cases
@@ -689,7 +758,7 @@ function showResults() {
                 displayValue = Math.random() > 0.5 ? 'Smash' : 'Pass';
                 break;
             case 'size':
-                displayValue = randomSize();
+                displayValue = getSize(modValue);
                 break;
             case 'speed':
                 displayValue = Math.round(-20 + (modValue/100 * 220)) + ' mph'; // -20-200
